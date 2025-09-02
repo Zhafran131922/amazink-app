@@ -7,14 +7,14 @@ export default function EditProductPage({ params }) {
   const [resData, setResData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${params.id}`)
+    fetch(`/api/product/${params.id}`)
       .then((res) => res.json())
       .then((data) => setTitle(data.title));
   }, [params.id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`https://dummyjson.com/products/${params.id}`, {
+    const res = await fetch(`/api/product/${params.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title }),
@@ -39,7 +39,9 @@ export default function EditProductPage({ params }) {
         </button>
       </form>
       {resData && (
-        <pre className="mt-4 p-2 border bg-gray-100 rounded">{JSON.stringify(resData, null, 2)}</pre>
+        <pre className="mt-4 p-2 border bg-gray-100 rounded">
+          {JSON.stringify(resData, null, 2)}
+        </pre>
       )}
     </div>
   );

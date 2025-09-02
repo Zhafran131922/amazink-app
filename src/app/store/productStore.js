@@ -16,10 +16,8 @@ export const useProductStore = create((set, get) => ({
   selectedProduct: null,
   confirmDelete: null,
 
-  // ✅ Set products langsung (SSR)
   setProducts: (products) => set({ products }),
 
-  // ✅ toggle dark mode
   toggleDarkMode: () =>
     set((state) => {
       const newMode = !state.darkMode;
@@ -34,7 +32,6 @@ export const useProductStore = create((set, get) => ({
       return { darkMode: newMode };
     }),
 
-  // ✅ fetch products
   fetchProducts: async () => {
     const { limit, skip, search, filter } = get();
     set({ loading: true });
@@ -58,12 +55,10 @@ export const useProductStore = create((set, get) => ({
     }
   },
 
-  // ✅ set search & filter
   setSearch: (q) => set({ search: q }),
   setFilter: (f) => set({ filter: f }),
   setSkip: (s) => set({ skip: s }),
 
-  // ✅ add product (dapat menerima parameter)
   addProduct: async (newProduct = null) => {
     const productToAdd = newProduct || {
       title: "New Product",
@@ -82,7 +77,6 @@ export const useProductStore = create((set, get) => ({
     }
   },
 
-  // ✅ edit product
   editProduct: (id, updatedData, oldData = {}) => {
     set({ loadingId: id });
 
@@ -120,7 +114,6 @@ export const useProductStore = create((set, get) => ({
     }
   },
 
-  // ✅ confirm & delete product
   confirmDeleteProduct: (product) => set({ confirmDelete: product }),
   deleteProduct: async (id) => {
     try {
