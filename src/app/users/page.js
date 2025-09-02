@@ -2,7 +2,6 @@ import UsersTable from "./UsersTable";
 import { getUsers } from "../../../lib/api/users";
 
 export default async function UsersPage() {
-  // Ambil data users dari helper API
   const dataUsers = await getUsers(50);
   const allDataUsers = await getUsers(100);
 

@@ -1,10 +1,8 @@
-// components/Pagination.jsx
 "use client";
 
 export default function Pagination({ totalPages, currentPage, setCurrentPage, darkMode = false }) {
   if (!totalPages || totalPages <= 1) return null;
 
-  // show up to maxButtons with ellipsis
   const maxButtons = 9;
   let start = Math.max(1, currentPage - Math.floor(maxButtons / 2));
   let end = start + maxButtons - 1;
