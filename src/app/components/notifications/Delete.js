@@ -11,9 +11,9 @@ export default function DeleteModal({ product, darkMode, onCancel, onConfirm, de
         }`}
       >
         <div className="p-6">
-          <h2 className="text-xl font-bold mb-4">Konfirmasi Hapus</h2>
+          <h2 className="text-xl font-bold mb-4">Delete Confirmation</h2>
           <p className="mb-4">
-            Apakah kamu yakin ingin menghapus produk{" "}
+            Are you sure you want to delete{" "}
             <span className="font-semibold">{product.title}</span>?
           </p>
           <div className="flex justify-end gap-3">
@@ -21,14 +21,14 @@ export default function DeleteModal({ product, darkMode, onCancel, onConfirm, de
               onClick={onCancel}
               className="px-4 py-2 rounded-lg shadow bg-gray-300 hover:bg-gray-400 text-gray-800 transition"
             >
-              Batal
+              Close
             </button>
             <button
               onClick={onConfirm}
               disabled={deleting}
               className="px-4 py-2 rounded-lg shadow bg-red-500 hover:bg-red-600 text-white transition disabled:opacity-50"
             >
-              {deleting ? "Deleting..." : "Hapus"}
+              {deleting ? "Deleting..." : "Delete"}
             </button>
           </div>
         </div>

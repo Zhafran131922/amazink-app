@@ -52,7 +52,6 @@ export default function Navbar({ darkMode, setDarkMode, user }) {
             : isScrolled ? "bg-white/95 backdrop-blur-sm" : "bg-white"
         } shadow-md`}
       >
-        {/* Logo and Hamburger Menu */}
         <div className="flex items-center gap-3">
           <button 
             onClick={toggleMenu}

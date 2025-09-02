@@ -64,7 +64,7 @@ export default function ProductTable({
 
               <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
                 <div>
-                  <span className="font-medium">Kategori:</span>
+                  <span className="font-medium">Category:</span>
                   <p className="capitalize">{p.category}</p>
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function ProductTable({
                     }`}
                   >
                     <Trash2 size={16} className="mr-1" />
-                    {deletingId === p.id ? "..." : "Hapus"}
+                    {deletingId === p.id ? "..." : "Delete"}
                   </button>
                 </div>
               </div>
@@ -132,11 +132,11 @@ export default function ProductTable({
             >
               <tr>
                 <th className="p-4 font-semibold">ID</th>
-                <th className="p-4 font-semibold">Nama</th>
-                <th className="p-4 font-semibold">Harga</th>
-                <th className="p-4 font-semibold">Kategori</th>
+                <th className="p-4 font-semibold">Name</th>
+                <th className="p-4 font-semibold">Price</th>
+                <th className="p-4 font-semibold">Category</th>
                 <th className="p-4 font-semibold">Rating</th>
-                <th className="p-4 font-semibold text-center">Aksi</th>
+                <th className="p-4 font-semibold text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
