@@ -11,7 +11,7 @@ export default function DetailModal({ product, darkMode, onClose }) {
         }`}
       >
         <div className="p-6">
-          {/* Header */}
+    
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-bold">{product.title}</h2>
             <button
@@ -22,17 +22,14 @@ export default function DetailModal({ product, darkMode, onClose }) {
             </button>
           </div>
 
-          {/* Thumbnail */}
           <img
             src={product.thumbnail}
             alt={product.title}
             className="mb-4 rounded-lg w-full h-48 object-cover"
           />
 
-          {/* Description */}
           <p className="mb-4">{product.description}</p>
 
-          {/* Info Grid */}
           <div className="grid grid-cols-2 gap-4 text-sm">
             <p>
               <span className="font-semibold">Harga:</span> ${product.price}
